@@ -1,7 +1,5 @@
 import json
-
 from GetResult import GetJson
-from WgWebapi import WgWebapi
 
 
 def getRecordTime(webapi, startTime, endTime):
@@ -13,7 +11,6 @@ def getRecordTime(webapi, startTime, endTime):
     :param endTime: 结束时间
     :return:
     """
-    webapi = WgWebapi()
     webapi.logInfo("准备提取...")
     method = "提取记录"
     newestIndex = -1

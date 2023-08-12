@@ -1,10 +1,10 @@
 import utils
-from WgWebapi import WgWebapi
+from Mode_Enum import Mode
 
 # 使用示例
 if __name__ == '__main__':
 
-    webapi = WgWebapi()
+    webapi = utils.WgWebapi()
 
     # 远程开门
     # utils.openDoor(webapi, 1)
@@ -46,4 +46,4 @@ if __name__ == '__main__':
     # utils.queryPrivs(webapi, 1230011)
 
     # 提取权限
-    # utils.getPrivs(webapi)
+    utils.getPrivs(webapi)

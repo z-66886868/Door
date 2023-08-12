@@ -1,7 +1,5 @@
 import json
-
 from GetResult import GetJson
-from WgWebapi import WgWebapi
 
 
 def getPrivs(webapi):
@@ -22,6 +20,7 @@ def getPrivs(webapi):
         if privsTotal > 600:
             timeout += (privsTotal * 5)
             print(f"提取权限，大概需要{privsTotal * 5 /1000}秒左右")
+
         strResult, _, _ = GetJson.run(method='提取权限', id=4005, timeout=timeout)
 
         arrPrivs = json.loads(strResult)['result']['记录信息']
@@ -33,5 +32,5 @@ def getPrivs(webapi):
             start = arrPrivsLen - 20
 
         while start < arrPrivsLen:
-            WgWebapi.logInfoWithTime(str(arrPrivs[start]), False)
+            webapi.logInfoWithTime(str(arrPrivs[start]), False)
             start += 1

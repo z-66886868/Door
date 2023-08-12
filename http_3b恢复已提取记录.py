@@ -1,7 +1,3 @@
-import time
-
-import WgWebapi
-from WgWebapi import WgWebapi
 from GetResult import GetJson
 
 

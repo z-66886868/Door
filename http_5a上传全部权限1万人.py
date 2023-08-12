@@ -1,5 +1,4 @@
 from GetResult import GetJson
-from WgWebapi import WgWebapi
 
 
 def uploadPrivs(webapi):

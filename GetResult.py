@@ -8,7 +8,8 @@ class GetJson:
 
     @classmethod
     def run(cls, method, id, timeout=3000, doorNo='', maxNum='', newestIndex='', lastIndex='', startTime='', endTime='',
-            doorMode='',doorDelay='', cardNumber='', arrPrivs=''):
+            doorMode='',
+            doorDelay='', cardNumber='', arrPrivs=''):
         """
         除了method 和 id 外都可为空
         :param method: 要执行的方法

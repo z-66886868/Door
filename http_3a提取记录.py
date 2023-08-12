@@ -1,7 +1,6 @@
 import json
 
 from GetResult import GetJson
-from WgWebapi import WgWebapi
 
 
 # 提取记录
@@ -37,7 +36,7 @@ def getRecord(webapi):
     if bFinished:
         if newestIndex > 0:
             method = "确认已接收记录"
-            strResult, _, _ = GetJson.run(method=method, id=3002, newestIndex=newestIndex, )
+            strResult, _, _ = GetJson.run(method=method, id=3002, newestIndex=newestIndex)
 
         webapi.logInfo("显示最后20条记录....")
         start = 0
@@ -45,5 +44,5 @@ def getRecord(webapi):
             start = len(arrSwipeRecords) - 20
 
         while start < len(arrSwipeRecords):
-            WgWebapi.logInfoWithTime(str(arrSwipeRecords[start]), False)
+            webapi.logInfoWithTime(str(arrSwipeRecords[start]), False)
             start += 1
