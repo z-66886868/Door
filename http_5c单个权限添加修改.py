@@ -11,6 +11,7 @@ def updatePrivs(webapi, cardNumber):
     method = "权限添加或修改"
     webapi.logInfo(method)
 
+
     startTime = "2022-05-10 00:00:00"
     endTime = "2099-12-31 23:59:59"
 
@@ -25,5 +26,5 @@ def updatePrivs(webapi, cardNumber):
         "用户密码": 0
     }]
 
-    strResult, _, _ = GetJson.run(method=method, id=4001, arrPrivs=privs)
+    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4001, arrPrivs=privs)
     webapi.logInfoInJson(strResult)

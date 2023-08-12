@@ -1,13 +1,17 @@
 import utils
 from Mode_Enum import Mode
+from WgWebapi import WgWebapi
 
 # 使用示例
 if __name__ == '__main__':
 
-    webapi = utils.WgWebapi()
+    webapi = WgWebapi()
 
+    webapi.setUrl(url="http://192.168.31.188:61080/")
+
+    print(webapi.getUrl())
     # 远程开门
-    # utils.openDoor(webapi, 1)
+    utils.openDoor(webapi, 2)
 
     # 查询控制器状态
     # utils.checkState(webapi)
@@ -46,4 +50,4 @@ if __name__ == '__main__':
     # utils.queryPrivs(webapi, 1230011)
 
     # 提取权限
-    utils.getPrivs(webapi)
+    # utils.getPrivs(webapi)

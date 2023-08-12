@@ -11,6 +11,6 @@ def queryPrivs(webapi, cardNumber):
     method = "权限查询"
     webapi.logInfo(method)
 
-    strResult, _, _ = GetJson.run(method=method, id=4003, cardNumber=[cardNumber])
+    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4003, cardNumber=[cardNumber])
 
     webapi.logInfoInJson(strResult)

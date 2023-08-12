@@ -12,7 +12,7 @@ def checkState(webapi):
     method = "查询控制器状态"
     webapi.logInfo(method)
     # 执行方法
-    (strResult, controllerSN, success) = GetJson.run(method=method, id=1002)
+    (strResult, controllerSN, success) = GetJson.run(webapi=webapi, method=method, id=1002)
 
     if success:
         result = json.loads(strResult)['result']

@@ -10,6 +10,4 @@ def recoverRecord(webapi):
     webapi.logInfo("恢复已提取记录")
     method = "确认已接收记录"
 
-    GetJson.run(method=method, id=3002, lastIndex=0)
-
-
+    GetJson.run(webapi=webapi, method=method, id=3002, lastIndex=0)

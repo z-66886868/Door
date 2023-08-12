@@ -1,17 +1,16 @@
 import json
 
-from WgWebapi import WgWebapi
-
 
 class GetJson:
-    webapi = WgWebapi()
 
-    @classmethod
-    def run(cls, method, id, timeout=3000, doorNo='', maxNum='', newestIndex='', lastIndex='', startTime='', endTime='',
+    @staticmethod
+    def run(webapi, method, id, timeout=3000, doorNo='', maxNum='', newestIndex='', lastIndex='', startTime='',
+            endTime='',
             doorMode='',
             doorDelay='', cardNumber='', arrPrivs=''):
         """
         除了method 和 id 外都可为空
+        :param webapi:
         :param method: 要执行的方法
         :param id: id号
         :param timeout: 请求超时时间
@@ -28,8 +27,11 @@ class GetJson:
         :return: 请求后的结果 和 序列号
         """
         success = ''
-        controllerSN = cls.webapi.getControllerSN()
-        url = cls.webapi.getUrl()
+        controllerSN = webapi.getControllerSN()
+        url = webapi.getUrl()
+
+        print(url)
+
         parameter = {
             "jsonrpc": "2.0",
             "method": method,
@@ -55,15 +57,15 @@ class GetJson:
 
         # print(parameter)
 
-        strResult = cls.webapi.PushToWebWithjson(url, body, timeout)
+        strResult = webapi.PushToWebWithjson(url, body, timeout)
 
         if len(strResult) == 0:
-            cls.webapi.logInfo("通讯失败")
+            webapi.logInfo("通讯失败")
         else:
-            success = cls.webapi.successIsTrue(strResult)
+            success = webapi.successIsTrue(strResult)
             if success:
-                cls.webapi.logInfo(f"{controllerSN} {method} 成功.")
+                webapi.logInfo(f"{controllerSN} {method} 成功.")
             else:
-                cls.webapi.logInfo(f"{controllerSN} {method} 失败...")
+                webapi.logInfo(f"{controllerSN} {method} 失败...")
 
         return strResult, controllerSN, success

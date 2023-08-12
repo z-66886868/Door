@@ -5,9 +5,8 @@ import requests
 
 
 class WgWebapi:
-
     def __init__(self):
-        self.url = "http://192.168.31.188:61080/"
+        self.url = ""
         self.controllerSN = 425035557
 
     def setUrl(self, url):
@@ -88,3 +87,4 @@ class WgWebapi:
             WgWebapi.logInfoWithTime(log_info, False)
         except json.JSONDecodeError:
             pass
+

@@ -11,7 +11,7 @@ def getPrivs(webapi):
     method = "权限总数读取"
     webapi.logInfo(method)
 
-    strResult, _, _ = GetJson.run(method=method, id=4003)
+    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4003)
 
     privsTotal = json.loads(strResult)['result']['权限总数']
 
@@ -21,7 +21,7 @@ def getPrivs(webapi):
             timeout += (privsTotal * 5)
             print(f"提取权限，大概需要{privsTotal * 5 /1000}秒左右")
 
-        strResult, _, _ = GetJson.run(method='提取权限', id=4005, timeout=timeout)
+        strResult, _, _ = GetJson.run(webapi=webapi, method='提取权限', id=4005, timeout=timeout)
 
         arrPrivs = json.loads(strResult)['result']['记录信息']
         start = 0

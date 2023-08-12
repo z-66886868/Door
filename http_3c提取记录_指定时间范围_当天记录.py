@@ -15,7 +15,7 @@ def getRecordTime(webapi, startTime, endTime):
     method = "提取记录"
     newestIndex = -1
 
-    strResult, _, _ = GetJson.run(method=method, id=3001, maxNum=1000, newestIndex=newestIndex,startTime=startTime,endTime=endTime)
+    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=3001, maxNum=1000, newestIndex=newestIndex,startTime=startTime,endTime=endTime)
 
     arrSwipeRecords = []
 

@@ -11,7 +11,7 @@ def getStart(webapi):
     method = "读取门控制参数"
     webapi.logInfo(method)
 
-    strResult, _, _ = GetJson.run(method=method, id=1004)
+    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=1004)
 
     webapi.logInfoInJson(strResult)
 
