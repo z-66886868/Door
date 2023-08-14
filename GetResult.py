@@ -4,14 +4,11 @@ from WgWebapi import WgWebapi
 
 
 class GetJson:
-
     webapi = WgWebapi.get_instance()
 
     @classmethod
     def run(cls, method, id, timeout=3000, doorNo='', maxNum='', newestIndex='', lastIndex='', startTime='',
-            endTime='',
-            doorMode='',
-            doorDelay='', cardNumber='', arrPrivs=''):
+            endTime='', doorMode='', doorDelay='', cardNumber='', arrPrivs='', timeFrame=''):
         """
         除了method 和 id 外都可为空
         :param method: 要执行的方法
@@ -27,13 +24,12 @@ class GetJson:
         :param doorDelay 开门延时(秒)  开门后多少秒后关门
         :param cardNumber: 卡号
         :param arrPrivs 权限
+        :param timeFrame: 时段
         :return: 请求后的结果 和 序列号
         """
-        success = ''
+
         controllerSN = cls.webapi.getControllerSN()
         url = cls.webapi.getUrl()
-
-        print(url)
 
         parameter = {
             "jsonrpc": "2.0",
@@ -51,17 +47,18 @@ class GetJson:
                     "控制方式": doorMode,
                     "开门延时(秒)": doorDelay,
                     "卡号": cardNumber,
-                    "权限": arrPrivs
+                    "权限": arrPrivs,
+                    "时段": timeFrame
                 }
             ]
         }
 
         body = json.dumps(parameter)
 
-        # print(parameter)
+        print(parameter)
 
         strResult = cls.webapi.PushToWebWithjson(url, body, timeout)
-
+        success = ''
         if len(strResult) == 0:
             cls.webapi.logInfo("通讯失败")
         else:

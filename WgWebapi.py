@@ -5,7 +5,9 @@ import requests
 
 
 class WgWebapi:
-
+    """
+    单例模式
+    """
     instance = None
 
     def __init__(self):

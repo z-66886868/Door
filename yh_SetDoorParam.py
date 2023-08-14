@@ -2,7 +2,7 @@ from GetResult import GetJson
 from Mode_Enum import Mode
 
 
-def setDoor(webapi, doorNo, mode: Mode, time):
+def setDoorParam(webapi, doorNo, mode: Mode, time):
     """
     设置门控制参数
     :param webapi:

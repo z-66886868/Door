@@ -2,7 +2,7 @@ import json
 from GetResult import GetJson
 
 
-def getRecordTime(webapi, startTime, endTime):
+def getRecordWithTime(webapi, startTime, endTime):
     """
     提取记录_指定时间范围_当天记录
     时间格式：yyyy-MM-dd HH:mm:ss
