@@ -10,6 +10,6 @@ def openDoor(webapi, doorNo):
     """
     method = "远程开门"
     webapi.logInfo(method)
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=1001, doorNo=doorNo)
+    strResult, _, _ = GetJson.run(method=method, id=1001, doorNo=doorNo)
 
     webapi.logInfoInJson(strResult)

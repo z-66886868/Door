@@ -5,9 +5,18 @@ import requests
 
 
 class WgWebapi:
+
+    instance = None
+
     def __init__(self):
         self.url = ""
         self.controllerSN = 425035557
+
+    @classmethod
+    def get_instance(cls):
+        if not cls.instance:
+            cls.instance = cls()
+        return cls.instance
 
     def setUrl(self, url):
         self.url = url

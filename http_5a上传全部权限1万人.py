@@ -33,6 +33,6 @@ def uploadPrivs(webapi):
     if len(arrPrivs) > 1000:
         timeout += (len(arrPrivs) * 4)
 
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4004, timeout=timeout, arrPrivs=arrPrivs)
+    strResult, _, _ = GetJson.run(method=method, id=4004, timeout=timeout, arrPrivs=arrPrivs)
 
     webapi.logInfoInJson(strResult)

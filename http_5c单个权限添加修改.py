@@ -26,5 +26,5 @@ def updatePrivs(webapi, cardNumber):
         "用户密码": 0
     }]
 
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4001, arrPrivs=privs)
+    strResult, _, _ = GetJson.run(method=method, id=4001, arrPrivs=privs)
     webapi.logInfoInJson(strResult)

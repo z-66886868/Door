@@ -13,6 +13,4 @@ from http_5d权限删除 import deletePrivs
 from http_5d权限查询 import queryPrivs
 from http_6提取权限 import getPrivs
 
-from WgWebapi import WgWebapi
-
 

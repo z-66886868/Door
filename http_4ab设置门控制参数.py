@@ -13,4 +13,4 @@ def setDoor(webapi, doorNo, mode: Mode, time):
     """
     method = "设置门控制参数"
     webapi.logInfo(method)
-    GetJson.run(webapi=webapi, method=method, id=1004, doorNo=doorNo, doorMode=mode.value, doorDelay=time)
+    GetJson.run(method=method, id=1004, doorNo=doorNo, doorMode=mode.value, doorDelay=time)

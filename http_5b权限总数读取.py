@@ -10,6 +10,6 @@ def getPrivsTotal(webapi):
     method = "权限总数读取"
     webapi.logInfo(method)
 
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=1004)
+    strResult, _, _ = GetJson.run(method=method, id=1004)
 
     webapi.logInfoInJson(strResult)

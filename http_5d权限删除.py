@@ -15,5 +15,5 @@ def deletePrivs(webapi, cardNum):
         "卡号": [cardNum],
     }]
 
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=4002, arrPrivs=privs)
+    strResult, _, _ = GetJson.run(method=method, id=4002, arrPrivs=privs)
     webapi.logInfoInJson(strResult)

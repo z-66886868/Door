@@ -10,4 +10,4 @@ def checkTime(webapi):
     method = "设置日期时间"
     webapi.logInfo(method)
 
-    GetJson.run(webapi=webapi, method=method, id=1003)
+    GetJson.run(method=method, id=1003)

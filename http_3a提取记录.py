@@ -15,7 +15,7 @@ def getRecord(webapi):
     newestIndex = -1
     bFinished = False
 
-    strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=3001, maxNum=1000, newestIndex=newestIndex)
+    strResult, _, _ = GetJson.run(method=method, id=3001, maxNum=1000, newestIndex=newestIndex)
 
     arrSwipeRecords = []
 
@@ -36,7 +36,7 @@ def getRecord(webapi):
     if bFinished:
         if newestIndex > 0:
             method = "确认已接收记录"
-            strResult, _, _ = GetJson.run(webapi=webapi, method=method, id=3002, newestIndex=newestIndex)
+            strResult, _, _ = GetJson.run(method=method, id=3002, newestIndex=newestIndex)
 
         webapi.logInfo("显示最后20条记录....")
         start = 0
